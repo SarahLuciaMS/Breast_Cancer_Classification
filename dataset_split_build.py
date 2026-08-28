@@ -32,5 +32,20 @@ print("Test images:", len(test_paths))
 print("Train images:", len(train_paths))
 print("Check it all adds up:", len(val_paths) + len(test_paths) + len(train_paths))
 
+for (split_type, original_path, base_path) in dataset_split: 
+    print(f"Building {split_type} set")
 
+    if not os.path.exists(base_path): 
+        print(f"Building directory {base_path}")
+        os.makedirs(base_path)
+
+    for path in original_path:
+        file = path.split(os.path.sep)[-1]
+        label = file[-5:-4] # this will specify only the class (0, 1) of each component in the split sets 
+
+
+
+
+
+    
 
