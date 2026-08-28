@@ -1,6 +1,6 @@
 import os
 
-INPUT_DATASET = "datasets/original"
+INPUT_DATASET = "C:/Users/sdalu/Downloads/Projects/CancerNet/breast-cancer-classification/breast-cancer-classification/datasets/original"
 
 BASE_PATH = "datasets/idc"
 TRAIN_PATH = os.path.sep.join([BASE_PATH, "training"])
