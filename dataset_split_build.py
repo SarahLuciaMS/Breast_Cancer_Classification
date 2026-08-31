@@ -43,6 +43,20 @@ for (split_type, original_path, base_path) in dataset_split:
         file = path.split(os.path.sep)[-1]
         label = file[-5:-4] # this will specify only the class (0, 1) of each component in the split sets 
 
+        label_path = os.path.sep.join([base_path, label])
+        if not os.path.exists(label_path):
+            print(f"Building {label_path} directory:")
+            os.makedirs(label_path)
+
+            final_path = os.path.sep.join([label_path, file]) 
+            shutil.copy2(path, final_path)
+
+            
+        
+
+
+
+
 
 
 
