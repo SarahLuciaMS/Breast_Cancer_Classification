@@ -2,7 +2,7 @@ import os
 
 INPUT_DATASET = "datasets/original" # path to where you store the Kaggle dataset
 
-BASE_PATH = "datasets/idc" # new dataset to be built
+BASE_PATH = "datasets/idc" # path to the datasets/idc folder which should be completely empty before running any code
 TRAIN_PATH = os.path.sep.join([BASE_PATH, "training"])
 VAL_PATH = os.path.sep.join([BASE_PATH, "validation"])
 TEST_PATH = os.path.sep.join([BASE_PATH, "testing"])
