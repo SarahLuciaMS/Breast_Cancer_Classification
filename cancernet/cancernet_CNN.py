@@ -13,9 +13,34 @@ class CancerNet:
             shape = (depth, width, height)
             channelDim = 1
 
-        model.add(SeparableConv2D(32, (3,3), padding = "same", input_shape = shape)) # first neuron 
+        model.add(SeparableConv2D(32, (3,3), padding = "same", input_shape = shape)) # start of the 3*3 CNN model
         model.add(Activation("relu"))
         model.add(BatchNormalization(axis = channelDim))
         model.add(MaxPooling2D(pool_size = (2, 2)))
         model.add(Dropout(0.25))
+
+        model.add(SeparableConv2D(64, (3,3), padding = "same", input_shape = shape)) 
+        model.add(Activation("relu"))
+        model.add(BatchNormalization(axis = channelDim))
+        model.add(SeparableConv2D(64, (3,3), padding = "same", input_shape = shape)) 
+        model.add(Activation("relu"))
+        model.add(BatchNormalization(axis = channelDim))
+        model.add(MaxPooling2D(pool_size = (2, 2)))
+        model.add(Dropout(0.25))
+
+        model.add(SeparableConv2D(128, (3,3), padding = "same", input_shape = shape)) 
+        model.add(Activation("relu"))
+        model.add(BatchNormalization(axis = channelDim))
+        model.add(SeparableConv2D(128, (3,3), padding = "same", input_shape = shape)) 
+        model.add(Activation("relu"))
+        model.add(BatchNormalization(axis = channelDim))
+        model.add(SeparableConv2D(128, (3,3), padding = "same", input_shape = shape)) 
+        model.add(Activation("relu"))
+        model.add(BatchNormalization(axis = channelDim))
+        model.add(MaxPooling2D(pool_size = (2, 2)))
+        model.add(Dropout(0.25))
+
+        
+
+
         
