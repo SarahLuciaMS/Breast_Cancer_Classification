@@ -24,7 +24,7 @@ len_test = len(list(paths.list_images(config.TEST_PATH)))
 train_labels = [int(p.split(os.path.sep)[:2]) for p in paths]
 train_labels = to_categorical(train_labels)
 class_total = train_labels.sum(axis = 0)
-class_weight = class_total.max() / class_total # getting rid of inbalance 
+class_weight = class_total.max() / class_total # getting rid of imbalance 
 
 
 
